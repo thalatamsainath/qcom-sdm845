@@ -92,6 +92,9 @@ TARGET_COMPILE_WITH_MSM_KERNEL := true
 #Enable PD locater/notifier
 TARGET_PD_SERVICE_ENABLED := true
 
+#Enable peripheral manager
+TARGET_PER_MGR_ENABLED := true
+
 # Enable dex pre-opt to speed up initial boot
 ifeq ($(HOST_OS),linux)
     ifeq ($(WITH_DEXPREOPT),)
