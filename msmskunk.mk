@@ -5,7 +5,7 @@ PRODUCT_DEVICE := msmskunk
 PRODUCT_BRAND := Android
 PRODUCT_MODEL := MSMSkunk for arm64
 
-TARGET_KERNEL_VERSION := 4.7
+TARGET_KERNEL_VERSION := 4.8
 # default is nosdcard, S/W button enabled in resource
 PRODUCT_CHARACTERISTICS := nosdcard
 
