@@ -22,7 +22,7 @@ ro.telephony.default_network=5
 debug.sf.hw=0
 debug.egl.hw=0
 #debug.composition.type=c2d
-persist.hwc.mdpcomp.enable=true
+#persist.hwc.mdpcomp.enable=true
 debug.mdpcomp.logs=0
 dalvik.vm.heapsize=36m
 dev.pm.dyn_samplingrate=1
@@ -54,8 +54,8 @@ persist.mm.enable.prefetch=true
 #
 # system props for the data modules
 #
-ro.use_data_netmgrd=true
-persist.data.netmgrd.qos.enable=true
+#ro.use_data_netmgrd=true
+#persist.data.netmgrd.qos.enable=true
 
 #system props for time-services
 persist.timed.enable=true
@@ -88,7 +88,7 @@ qcom.bluetooth.soc=rome
 ro.bluetooth.a4wp=true
 
 #system prop for wipower support
-ro.bluetooth.wipower=true
+#ro.bluetooth.wipower=true
 
 #
 #snapdragon value add features
@@ -150,3 +150,14 @@ ro.hwui.text_small_cache_width=1024
 ro.hwui.text_small_cache_height=1024
 ro.hwui.text_large_cache_width=2048
 ro.hwui.text_large_cache_height=1024
+
+config.disable_rtt=true
+
+ro.config.low_ram=1
+ro.kernel.qemu=1
+debug.gralloc.gfx_ubwc_disable=1
+persist.sys.force_sw_gles=1
+persist.radio.atfwd.start=false
+ro.use_data_netmgrd=false
+ro.kernel.qemu.gles=0
+

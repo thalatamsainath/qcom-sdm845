@@ -12,6 +12,8 @@ PRODUCT_CHARACTERISTICS := nosdcard
 #Android EGL implementation
 PRODUCT_PACKAGES += libGLES_android
 
+PRODUCT_BOOT_JARS += tcmiface
+
 # Audio configuration file
 PRODUCT_COPY_FILES += \
     device/qcom/msmskunk/audio_policy.conf:system/etc/audio_policy.conf \

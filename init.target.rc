@@ -57,15 +57,15 @@ on post-fs-data
     mkdir /tombstones/wcnss 0771 system system
     mkdir /tombstones/dsps 0771 system system
 
-on boot
-    start rmt_storage
-    start rfs_access
+#on boot
+    #start rmt_storage
+    #start rfs_access
 
 #start camera server as daemon
-service qcamerasvr /system/bin/mm-qcamera-daemon
-    class late_start
-    user camera
-    group camera system inet input graphics
+#service qcamerasvr /system/bin/mm-qcamera-daemon
+#    class late_start
+#    user camera
+#    group camera system inet input graphics
 
 ## import cne init file
 #on post-fs
@@ -107,10 +107,10 @@ service qcamerasvr /system/bin/mm-qcamera-daemon
 #   group system
 #   disabled
 #
-service thermal-engine /system/bin/thermal-engine
-   class main
-   user root
-   group root
+#service thermal-engine /system/bin/thermal-engine
+#   class main
+#   user root
+#   group root
 
 #service security-check1 /sbin/security_boot_check system
 #    class core
@@ -120,10 +120,10 @@ service thermal-engine /system/bin/thermal-engine
 #    class core
 #    oneshot
 #
-service time_daemon /system/bin/time_daemon
-   class late_start
-   user root
-   group root
+#service time_daemon /system/bin/time_daemon
+#   class late_start
+#   user root
+#   group root
 
 #service adsprpcd /system/bin/adsprpcd
 #   class main
