@@ -21,7 +21,7 @@ TARGET_2ND_CPU_VARIANT := cortex-a9
 # SDClang configuration
 SDCLANG := true
 
-TARGET_NO_BOOTLOADER := true
+TARGET_NO_BOOTLOADER := false
 TARGET_USES_UEFI := true
 TARGET_NO_KERNEL := false
 BOARD_PRESIL_BUILD := true
