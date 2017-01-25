@@ -27,3 +27,12 @@ PRODUCT_COPY_FILES += \
     device/qcom/msmskunk/listen_platform_info.xml:system/etc/listen_platform_info.xml
 
 PRODUCT_PACKAGES += fs_config_files
+
+#A/B related packages
+PRODUCT_PACKAGES += update_engine \
+    update_engine_client \
+    update_verifier \
+    bootctrl.msmskunk \
+    brillo_update_payload
+#Boot control HAL test app
+PRODUCT_PACKAGES_DEBUG += bootctl
