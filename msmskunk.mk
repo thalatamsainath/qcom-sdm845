@@ -26,3 +26,4 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/qcom/msmskunk/listen_platform_info.xml:system/etc/listen_platform_info.xml
 
+PRODUCT_PACKAGES += fs_config_files
