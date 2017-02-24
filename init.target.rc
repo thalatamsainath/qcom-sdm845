@@ -57,9 +57,9 @@ on post-fs-data
     mkdir /tombstones/wcnss 0771 system system
     mkdir /tombstones/dsps 0771 system system
 
-#on boot
-    #start rmt_storage
-    #start rfs_access
+on boot
+    start rmt_storage
+    start rfs_access
 
 #start camera server as daemon
 #service qcamerasvr /system/bin/mm-qcamera-daemon
