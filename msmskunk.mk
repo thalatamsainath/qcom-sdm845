@@ -20,16 +20,7 @@ PRODUCT_PACKAGES += libGLES_android
 PRODUCT_BOOT_JARS += tcmiface
 
 # Audio configuration file
-PRODUCT_COPY_FILES += \
-    device/qcom/msmskunk/audio_policy.conf:system/etc/audio_policy.conf \
-    device/qcom/msmskunk/audio_effects.conf:system/vendor/etc/audio_effects.conf \
-    device/qcom/msmskunk/mixer_paths.xml:system/etc/mixer_paths.xml \
-    device/qcom/msmskunk/mixer_paths_i2s.xml:system/etc/mixer_paths_i2s.xml \
-    device/qcom/msmskunk/audio_platform_info_i2s.xml:system/etc/audio_platform_info_i2s.xml
-
-# Listen configuration file
-PRODUCT_COPY_FILES += \
-    device/qcom/msmskunk/listen_platform_info.xml:system/etc/listen_platform_info.xml
+-include $(TOPDIR)hardware/qcom/audio/configs/msmskunk/msmskunk.mk
 
 PRODUCT_PACKAGES += fs_config_files
 
