@@ -5,6 +5,11 @@ PRODUCT_DEVICE := msmskunk
 PRODUCT_BRAND := Android
 PRODUCT_MODEL := MSMSkunk for arm64
 
+#Initial bringup flags
+TARGET_USES_AOSP := true
+TARGET_USES_AOSP_FOR_AUDIO := true
+TARGET_USES_QCOM_BSP := false
+
 TARGET_KERNEL_VERSION := 4.9
 # default is nosdcard, S/W button enabled in resource
 PRODUCT_CHARACTERISTICS := nosdcard

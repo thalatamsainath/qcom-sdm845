@@ -49,8 +49,10 @@ TARGET_NO_RECOVERY := true
 BOARD_USES_RECOVERY_AS_ROOT := true
 
 #Enable compilation of oem-extensions to recovery
-#These are needed by the bootcontrol HAL
-TARGET_RECOVERY_UPDATER_LIBS += librecovery_updater_msm
+#These need to be explicitly 
+ifneq ($(AB_OTA_UPDATER),true)
+    TARGET_RECOVERY_UPDATER_LIBS += librecovery_updater_msm
+endif
 
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x04000000
@@ -113,4 +115,3 @@ ifeq ($(HOST_OS),linux)
       endif
     endif
 endif
-
