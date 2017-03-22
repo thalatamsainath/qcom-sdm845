@@ -85,11 +85,9 @@ persist.fuse_sdcard=true
 #system prop for Bluetooth SOC type
 qcom.bluetooth.soc=rome
 
-#system prop for A4WP profile support
-ro.bluetooth.a4wp=true
-
 #system prop for wipower support
-#ro.bluetooth.wipower=true
+ro.bluetooth.emb_wp_mode=true
+ro.bluetooth.wipower=true
 
 #
 #snapdragon value add features
