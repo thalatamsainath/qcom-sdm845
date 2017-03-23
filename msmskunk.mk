@@ -5,12 +5,14 @@ PRODUCT_DEVICE := msmskunk
 PRODUCT_BRAND := Android
 PRODUCT_MODEL := MSMSkunk for arm64
 
-TARGET_KERNEL_VERSION := 4.7
+TARGET_KERNEL_VERSION := 4.9
 # default is nosdcard, S/W button enabled in resource
 PRODUCT_CHARACTERISTICS := nosdcard
 
 #Android EGL implementation
 PRODUCT_PACKAGES += libGLES_android
+
+PRODUCT_BOOT_JARS += tcmiface
 
 # Audio configuration file
 PRODUCT_COPY_FILES += \
@@ -24,3 +26,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/qcom/msmskunk/listen_platform_info.xml:system/etc/listen_platform_info.xml
 
+PRODUCT_PACKAGES += fs_config_files
+
+#A/B related packages
+PRODUCT_PACKAGES += update_engine \
+    update_engine_client \
+    update_verifier \
+    bootctrl.msmskunk \
+    brillo_update_payload
+#Boot control HAL test app
+PRODUCT_PACKAGES_DEBUG += bootctl

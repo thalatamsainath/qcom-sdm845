@@ -19,7 +19,7 @@ endif
 # Compile Linux Kernel
 #----------------------------------------------------------------------
 ifeq ($(KERNEL_DEFCONFIG),)
-    KERNEL_DEFCONFIG := msmskunk_defconfig
+    KERNEL_DEFCONFIG := sdm845_defconfig
 endif
 
 ifeq ($(TARGET_KERNEL_SOURCE),)
