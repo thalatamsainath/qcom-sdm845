@@ -111,6 +111,9 @@ $(shell mkdir -p $(TARGET_OUT_ETC)/firmware/wlan/qca_cld; \
 ln -sf /system/etc/wifi/WCNSS_qcom_cfg.ini \
 $(TARGET_OUT_ETC)/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini)
 
+# BOARD_HAS_QCOM_WLAN
+endif
+
 #----------------------------------------------------------------------
 # Radio image
 #----------------------------------------------------------------------
