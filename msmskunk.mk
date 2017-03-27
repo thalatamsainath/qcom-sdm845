@@ -41,3 +41,7 @@ PRODUCT_PACKAGES += update_engine \
     brillo_update_payload
 #Boot control HAL test app
 PRODUCT_PACKAGES_DEBUG += bootctl
+
+# Adding vendor manifest
+PRODUCT_COPY_FILES += \
+    device/qcom/msmskunk/vintf.xml:system/vendor/manifest.xml
