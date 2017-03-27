@@ -45,3 +45,14 @@ PRODUCT_PACKAGES_DEBUG += bootctl
 # Adding vendor manifest
 PRODUCT_COPY_FILES += \
     device/qcom/msmskunk/vintf.xml:system/vendor/manifest.xml
+
+# Gralloc
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.allocator@2.0-impl \
+    android.hardware.graphics.allocator@2.0-service \
+    android.hardware.graphics.mapper@2.0-impl
+
+# HW Composer
+PROCUCT_PACKAGES += \
+    android.hardware.graphics.composer@2.1-impl \
+    android.hardware.graphics.composer@2.1-service

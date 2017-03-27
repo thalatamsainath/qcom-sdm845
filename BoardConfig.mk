@@ -115,3 +115,6 @@ ifeq ($(HOST_OS),linux)
       endif
     endif
 endif
+
+TARGET_USES_GRALLOC1 := true
+TARGET_USES_HWC2 := true
