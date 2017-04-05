@@ -1,5 +1,5 @@
 #
-# system.prop for msmskunk
+# system.prop for sdm845
 #
 
 #rild.libpath=/system/lib/libreference-ril.so

@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-	$(LOCAL_DIR)/msmskunk.mk
+	$(LOCAL_DIR)/sdm845.mk

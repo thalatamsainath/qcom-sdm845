@@ -1,9 +1,9 @@
 $(call inherit-product, device/qcom/common/common64.mk)
 
-PRODUCT_NAME := msmskunk
-PRODUCT_DEVICE := msmskunk
+PRODUCT_NAME := sdm845
+PRODUCT_DEVICE := sdm845
 PRODUCT_BRAND := Android
-PRODUCT_MODEL := MSMSkunk for arm64
+PRODUCT_MODEL := SDM845 for arm64
 
 #Initial bringup flags
 TARGET_USES_AOSP := true
@@ -20,7 +20,7 @@ PRODUCT_PACKAGES += libGLES_android
 PRODUCT_BOOT_JARS += tcmiface
 
 # Audio configuration file
--include $(TOPDIR)hardware/qcom/audio/configs/msmskunk/msmskunk.mk
+-include $(TOPDIR)hardware/qcom/audio/configs/sdm845/sdm845.mk
 
 PRODUCT_PACKAGES += fs_config_files
 
@@ -28,14 +28,14 @@ PRODUCT_PACKAGES += fs_config_files
 PRODUCT_PACKAGES += update_engine \
     update_engine_client \
     update_verifier \
-    bootctrl.msmskunk \
+    bootctrl.sdm845 \
     brillo_update_payload
 #Boot control HAL test app
 PRODUCT_PACKAGES_DEBUG += bootctl
 
 # Adding vendor manifest
 PRODUCT_COPY_FILES += \
-    device/qcom/msmskunk/vintf.xml:system/vendor/manifest.xml
+    device/qcom/sdm845/vintf.xml:system/vendor/manifest.xml
 
 # Gralloc
 PRODUCT_PACKAGES += \
