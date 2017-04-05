@@ -14,6 +14,9 @@ TARGET_KERNEL_VERSION := 4.9
 # default is nosdcard, S/W button enabled in resource
 PRODUCT_CHARACTERISTICS := nosdcard
 
+# WLAN chipset
+WLAN_CHIPSET := qca_cld3
+
 #Android EGL implementation
 PRODUCT_PACKAGES += libGLES_android
 
@@ -50,3 +53,17 @@ PROCUCT_PACKAGES += \
 
 #Keymaster
 PRODUCT_PACKAGES += android.hardware.keymaster@3.0-impl
+
+# WLAN host driver
+ifneq ($(WLAN_CHIPSET),)
+PRODUCT_PACKAGES += $(WLAN_CHIPSET)_wlan.ko
+endif
+
+# WLAN driver configuration file
+PRODUCT_COPY_FILES += \
+    device/qcom/sdm845/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
+    device/qcom/sdm845/wifi_concurrency_cfg.txt:system/etc/wifi/wifi_concurrency_cfg.txt
+
+PRODUCT_PACKAGES += \
+    wpa_supplicant_overlay.conf \
+    p2p_supplicant_overlay.conf
