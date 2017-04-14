@@ -60,16 +60,19 @@ PRODUCT_PACKAGES_DEBUG += bootctl
 PRODUCT_COPY_FILES += \
     device/qcom/sdm845/vintf.xml:$(TARGET_COPY_OUT_VENDOR)/manifest.xml
 
-# Gralloc
+# Display/Graphics
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.allocator@2.0-service \
-    android.hardware.graphics.mapper@2.0-impl
-
-# HW Composer
-PROCUCT_PACKAGES += \
+    android.hardware.graphics.mapper@2.0-impl \
     android.hardware.graphics.composer@2.1-impl \
-    android.hardware.graphics.composer@2.1-service
+    android.hardware.graphics.composer@2.1-service \
+    android.hardware.memtrack@1.0-impl \
+    android.hardware.memtrack@1.0-service \
+    android.hardware.light@2.0-impl \
+    android.hardware.light@2.0-service \
+    android.hardware.configstore@1.0-service
+
 
 #Keymaster
 PRODUCT_PACKAGES += android.hardware.keymaster@3.0-impl
