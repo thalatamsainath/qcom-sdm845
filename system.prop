@@ -158,4 +158,5 @@ debug.gralloc.gfx_ubwc_disable=1
 persist.sys.force_sw_gles=1
 persist.radio.atfwd.start=false
 ro.kernel.qemu.gles=0
-debug.sf.nobootanimation=1
+sdm.debug.disable_scalar=1
+qemu.hw.mainkeys=0
