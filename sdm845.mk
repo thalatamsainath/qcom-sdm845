@@ -113,6 +113,10 @@ PRODUCT_PACKAGES += \
 #Keymaster
 PRODUCT_PACKAGES += android.hardware.keymaster@3.0-impl
 
+# FBE support
+PRODUCT_COPY_FILES += \
+    device/qcom/sdm845/init.qti.qseecomd.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qti.qseecomd.sh
+
 # Camera configuration file. Shared by passthrough/binderized camera HAL
 PRODUCT_PACKAGES += camera.device@3.2-impl
 PRODUCT_PACKAGES += camera.device@1.0-impl
