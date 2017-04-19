@@ -75,6 +75,11 @@ on boot
 #    class late_start
 #    user camera
 #    group camera system inet input graphics
+#pd-mapper
+service pd_mapper /vendor/bin/pd-mapper
+    class core
+    user system
+    group system
 
 #Peripheral manager
 service per_mgr /system/bin/pm-service
