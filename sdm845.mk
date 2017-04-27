@@ -10,6 +10,17 @@ TARGET_USES_AOSP := true
 TARGET_USES_AOSP_FOR_AUDIO := true
 TARGET_USES_QCOM_BSP := false
 
+#Default vendor image configuration
+ifeq ($(ENABLE_VENDOR_IMAGE),)
+ENABLE_VENDOR_IMAGE := false
+endif
+ifeq ($(ENABLE_VENDOR_IMAGE), true)
+#Comment on msm8998 tree says that QTIC does not
+# yet support system/vendor split. So disabling it
+# for sdm845 as well
+TARGET_USES_QTIC := false
+
+endif
 TARGET_KERNEL_VERSION := 4.9
 # default is nosdcard, S/W button enabled in resource
 PRODUCT_CHARACTERISTICS := nosdcard
@@ -47,7 +58,7 @@ PRODUCT_PACKAGES_DEBUG += bootctl
 
 # Adding vendor manifest
 PRODUCT_COPY_FILES += \
-    device/qcom/sdm845/vintf.xml:system/vendor/manifest.xml
+    device/qcom/sdm845/vintf.xml:$(TARGET_COPY_OUT_VENDOR)/manifest.xml
 
 # Gralloc
 PRODUCT_PACKAGES += \
