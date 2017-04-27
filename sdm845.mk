@@ -29,6 +29,8 @@ PRODUCT_COPY_FILES += device/qcom/sdm845/media_profiles.xml:system/etc/media_pro
     device/qcom/sdm845/media_codecs_performance.xml:system/etc/media_codecs_performance.xml
 endif #TARGET_ENABLE_QC_AV_ENHANCEMENTS
 
+PRODUCT_PACKAGES += android.hardware.media.omx@1.0-impl
+
 # Audio configuration file
 -include $(TOPDIR)hardware/qcom/audio/configs/sdm845/sdm845.mk
 
