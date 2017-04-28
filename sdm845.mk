@@ -52,9 +52,19 @@ PRODUCT_PACKAGES += update_engine \
     update_engine_client \
     update_verifier \
     bootctrl.sdm845 \
-    brillo_update_payload
+    brillo_update_payload \
+    android.hardware.boot@1.0-impl \
+    android.hardware.boot@1.0-service
+
 #Boot control HAL test app
 PRODUCT_PACKAGES_DEBUG += bootctl
+
+#Healthd packages
+PRODUCT_PACKAGES += \
+    android.hardware.health@1.0-impl \
+    android.hardware.health@1.0-convert \
+    android.hardware.health@1.0-service \
+    libhealthd.msm
 
 # Adding vendor manifest
 PRODUCT_COPY_FILES += \
