@@ -7,7 +7,7 @@ PRODUCT_MODEL := SDM845 for arm64
 
 #Initial bringup flags
 TARGET_USES_AOSP := true
-TARGET_USES_AOSP_FOR_AUDIO := true
+TARGET_USES_AOSP_FOR_AUDIO := false
 TARGET_USES_QCOM_BSP := false
 
 #Default vendor image configuration
