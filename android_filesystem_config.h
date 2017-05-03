@@ -45,6 +45,12 @@ static const struct fs_path_config android_device_files[] = {
        { 00755, AID_SYSTEM,         AID_SYSTEM,         (1ULL << CAP_NET_BIND_SERVICE), "system/vendor/bin/imsdatadaemon" },
        { 00755, AID_SYSTEM,         AID_SYSTEM,         (1ULL << CAP_NET_BIND_SERVICE), "vendor/bin/imsdatadaemon" },
        // IMS Rtp daemon
+       { 00755, AID_SYSTEM,         AID_SYSTEM,         CAP_MASK_LONG(CAP_NET_BIND_SERVICE) |
+                                                        CAP_MASK_LONG(CAP_BLOCK_SUSPEND),
+                                                        "vendor/bin/cnd" },
+       { 00755, AID_SYSTEM,         AID_SYSTEM,         CAP_MASK_LONG(CAP_NET_BIND_SERVICE) |
+                                                        CAP_MASK_LONG(CAP_BLOCK_SUSPEND),
+                                                        "system/vendor/bin/cnd" },
        { 00755, AID_SYSTEM,         AID_RADIO,          (1ULL << CAP_NET_BIND_SERVICE), "system/vendor/bin/ims_rtp_daemon" },
        { 00755, AID_SYSTEM,         AID_RADIO,          (1ULL << CAP_NET_BIND_SERVICE), "vendor/bin/ims_rtp_daemon" },
 
