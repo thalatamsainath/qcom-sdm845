@@ -32,6 +32,8 @@ WLAN_CHIPSET := qca_cld3
 PRODUCT_PACKAGES += libGLES_android
 
 PRODUCT_BOOT_JARS += tcmiface
+PRODUCT_BOOT_JARS += telephony-ext
+PRODUCT_PACKAGES += telephony-ext
 
 # Video codec configuration files
 MEDIA_XML_TARGET := system/vendor/etc
