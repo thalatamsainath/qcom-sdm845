@@ -31,6 +31,11 @@ WLAN_CHIPSET := qca_cld3
 #Android EGL implementation
 PRODUCT_PACKAGES += libGLES_android
 
+# Video seccomp policy files
+PRODUCT_COPY_FILES += \
+    device/qcom/sdm845/seccomp/mediacodec-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
+    device/qcom/sdm845/seccomp/mediaextractor-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy
+
 PRODUCT_BOOT_JARS += tcmiface
 
 # Video codec configuration files
