@@ -135,3 +135,6 @@ USE_SENSOR_MULTI_HAL := true
 
 #Add non-hlos files to ota packages
 ADD_RADIO_FILES := true
+
+#Generate DTBO image
+BOARD_KERNEL_SEPARATED_DTBO := true
