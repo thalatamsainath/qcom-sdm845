@@ -40,8 +40,7 @@ on init
     write /dev/stune/top-app/schedtune.colocate 1
 
 on fs
-    wait /dev/block/platform/soc/1d84000.ufshc_mem
-    symlink /dev/block/platform/soc/1d84000.ufshc_mem /dev/block/bootdevice
+    wait /dev/block/bootdevice
     mount_all fstab.qcom
     #restorecon /persist
 
