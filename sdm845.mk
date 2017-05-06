@@ -118,6 +118,11 @@ PRODUCT_PACKAGES += \
     wpa_supplicant_overlay.conf \
     p2p_supplicant_overlay.conf
 
+#for wlan
+PRODUCT_PACKAGES += \
+    wificond \
+    wifilogd
+
 # Sensor HAL conf file
 PRODUCT_COPY_FILES += \
     device/qcom/sdm845/sensors/hals.conf:system/etc/sensors/hals.conf
