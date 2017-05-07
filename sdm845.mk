@@ -37,6 +37,8 @@ PRODUCT_COPY_FILES += \
     device/qcom/sdm845/seccomp/mediaextractor-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy
 
 PRODUCT_BOOT_JARS += tcmiface
+PRODUCT_BOOT_JARS += telephony-ext
+PRODUCT_PACKAGES += telephony-ext
 
 # Video codec configuration files
 MEDIA_XML_TARGET := system/vendor/etc
