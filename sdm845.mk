@@ -46,22 +46,12 @@ PRODUCT_BOOT_JARS += qcom.fmradio
 endif #BOARD_HAVE_QCOM_FM
 
 # Video codec configuration files
-MEDIA_XML_TARGET := system/vendor/etc
-MEDIA_XML_TARGET_VENDOR := vendor/etc
-MEDIA_XML_TARGET_SYSTEM := etc
-
 ifeq ($(TARGET_ENABLE_QC_AV_ENHANCEMENTS), true)
-PRODUCT_COPY_FILES += device/qcom/sdm845/media_profiles.xml:$(MEDIA_XML_TARGET)/media_profiles.xml \
-                      device/qcom/sdm845/media_profiles.xml:$(MEDIA_XML_TARGET_VENDOR)/media_profiles.xml \
-                      device/qcom/sdm845/media_profiles.xml:$(MEDIA_XML_TARGET_SYSTEM)/media_profiles.xml
+PRODUCT_COPY_FILES += device/qcom/sdm845/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles.xml
 
-PRODUCT_COPY_FILES += device/qcom/sdm845/media_codecs.xml:$(MEDIA_XML_TARGET)/media_codecs.xml \
-                      device/qcom/sdm845/media_codecs.xml:$(MEDIA_XML_TARGET_VENDOR)/media_codecs.xml \
-                      device/qcom/sdm845/media_codecs.xml:$(MEDIA_XML_TARGET_SYSTEM)/media_codecs.xml
+PRODUCT_COPY_FILES += device/qcom/sdm845/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml
 
-PRODUCT_COPY_FILES += device/qcom/sdm845/media_codecs_performance.xml:$(MEDIA_XML_TARGET)/media_codecs_performance.xml \
-                      device/qcom/sdm845/media_codecs_performance.xml:$(MEDIA_XML_TARGET_VENDOR)/media_codecs_performance.xml \
-                      device/qcom/sdm845/media_codecs_performance.xml:$(MEDIA_XML_TARGET_SYSTEM)/media_codecs_performance.xml
+PRODUCT_COPY_FILES += device/qcom/sdm845/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml
 endif #TARGET_ENABLE_QC_AV_ENHANCEMENTS
 
 PRODUCT_PACKAGES += android.hardware.media.omx@1.0-impl
