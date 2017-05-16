@@ -42,7 +42,8 @@ on init
 on fs
     wait /dev/block/bootdevice
     mount_all fstab.qcom
-    #restorecon /persist
+    restorecon_recursive /persist
+    mkdir /persist/data 0700 system system
 
 on post-fs
     write /dev/ipa 1
