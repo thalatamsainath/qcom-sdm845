@@ -109,10 +109,6 @@ PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service \
     android.hardware.configstore@1.0-service
 
-
-#Keymaster
-PRODUCT_PACKAGES += android.hardware.keymaster@3.0-impl
-
 # FBE support
 PRODUCT_COPY_FILES += \
     device/qcom/sdm845/init.qti.qseecomd.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qti.qseecomd.sh
