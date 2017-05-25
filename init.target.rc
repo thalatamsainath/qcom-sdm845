@@ -56,7 +56,7 @@ on post-fs-data
     mkdir /tombstones/lpass 0771 system system
     mkdir /tombstones/wcnss 0771 system system
     mkdir /tombstones/dsps 0771 system system
-    mkdir /data/misc/hbtp 0750 system system
+    mkdir /data/vendor/hbtp 0750 system system
     mkdir /persist/qti_fp 0700 system system
 
 # For cpusets initialize for Silver Only first and then Silver + Gold
