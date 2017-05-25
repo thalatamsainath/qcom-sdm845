@@ -1,3 +1,6 @@
+# Enable AVB 2.0
+BOARD_AVB_ENABLE := true
+
 $(call inherit-product, device/qcom/common/common64.mk)
 
 PRODUCT_NAME := sdm845
