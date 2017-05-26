@@ -129,6 +129,7 @@ endif
 
 TARGET_USES_GRALLOC1 := true
 TARGET_USES_HWC2 := true
+TARGET_USES_QCOM_DISPLAY_BSP := true
 
 # Enable sensor multi HAL
 USE_SENSOR_MULTI_HAL := true
