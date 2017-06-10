@@ -60,7 +60,6 @@ TARGET_RECOVERY_FSTAB := device/qcom/sdm845/recovery_vendor_variant.fstab
 BOARD_VENDORIMAGE_PARTITION_SIZE := 1073741824
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_COPY_OUT_VENDOR := vendor
-VENDOR_FSTAB_ENTRY := "/dev/block/bootdevice/by-name/vendor                      /vendor                     ext4   ro,barrier=1,discard                               wait,slotselect"
 else
 TARGET_RECOVERY_FSTAB := device/qcom/sdm845/recovery.fstab
 endif
