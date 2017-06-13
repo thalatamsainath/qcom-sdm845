@@ -56,7 +56,7 @@ on post-fs-data
     mkdir /tombstones/lpass 0771 system system
     mkdir /tombstones/wcnss 0771 system system
     mkdir /tombstones/dsps 0771 system system
-    mkdir /data/vendor/hbtp 0750 system system
+    mkdir /data/misc/hbtp 0750 system system
     mkdir /persist/qti_fp 0700 system system
 
 # For cpusets initialize for Silver Only first and then Silver + Gold
@@ -132,11 +132,6 @@ service qseecomd /vendor/bin/qseecomd
     class core
     user root
     group root
-
-service spdaemon /vendor/bin/spdaemon
-    class core
-    user system
-    group system
 
 #service mpdecision /system/bin/mpdecision --avg_comp
 #   user root
@@ -239,19 +234,22 @@ service adsprpcd /system/bin/adsprpcd
 #    chown system drmrpc /sys/devices/f9966000.i2c/i2c-1/1-0020/secure_touch
 #
 #
-#service imsqmidaemon /system/vendor/bin/imsqmidaemon
-#    class main
-#    user system
-#    group radio net_raw log qcom_diag
-#    disabled
 #
 ## imsdatadaemon starts with root and UID will be downgraded to SYSTEM.
-#service imsdatadaemon /system/vendor/bin/imsdatadaemon
-#    class main
-#    user root
-#    group system wifi radio net_raw log qcom_diag net_admin
-#    disabled
-#
+service imsqmidaemon /system/vendor/bin/imsqmidaemon
+    class main
+    user system
+    socket ims_qmid stream 0660 system radio
+    group radio log diag
+
+# imsdatadaemon starts with root and UID will be downgraded to SYSTEM.
+service imsdatadaemon /system/vendor/bin/imsdatadaemon
+    class main
+    user system
+    socket ims_datad stream 0660 system radio
+    group system wifi radio inet log diag
+    disabled
+
 #service mdm_helper /system/bin/mdm_helper
 #    class core
 #    onrestart setprop ro.service.mdm_helper_restarted "true"
@@ -305,25 +303,26 @@ service adsprpcd /system/bin/adsprpcd
 #   group gps system qcom_diag diag log inet net_raw
 #   disabled
 
-#on property:sys.ims.QMI_DAEMON_STATUS=1
-#    start imsdatadaemon
-#
-#service ims_rtp_daemon /system/vendor/bin/ims_rtp_daemon
-#   class main
-#   user system
-#   socket ims_rtpd stream 0660 system ims
-#   group ims net_raw diag qcom_diag log
-#   disabled
-#
+
 #service imscmservice /system/vendor/bin/imscmservice
 #    class main
 #    user system
 #    group radio diag inet log
 #    disabled
-#on property:sys.ims.DATA_DAEMON_STATUS=1
-#    start ims_rtp_daemon
-#
-#service ppd /vendor/bin/mm-pp-daemon
+
+on property:sys.ims.QMI_DAEMON_STATUS=1
+    start imsdatadaemon
+
+service ims_rtp_daemon /system/vendor/bin/ims_rtp_daemon
+   class main
+   user system
+   group radio diag inet log
+   disabled
+
+on property:sys.ims.DATA_DAEMON_STATUS=1
+    start ims_rtp_daemon
+
+#service ppd /system/bin/mm-pp-daemon
 #    class late_start
 #    disabled
 #    user system
@@ -370,7 +369,7 @@ service fps_hal /system/vendor/bin/fingerprint.qcom
     user system
     group system input
 
-service energy-awareness /system/vendor/bin/energy-awareness
+service energy-awareness /system/bin/energy-awareness
     class main
     user system
     group system
