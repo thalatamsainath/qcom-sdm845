@@ -310,11 +310,11 @@ service imsdatadaemon /system/vendor/bin/imsdatadaemon
 #   disabled
 
 
-#service imscmservice /system/vendor/bin/imscmservice
-#    class main
-#    user system
-#    group radio diag inet log
-#    disabled
+service imsrcsservice /system/vendor/bin/imsrcsd
+    class main
+    user system
+    group radio diag inet log
+    disabled
 
 on property:sys.ims.QMI_DAEMON_STATUS=1
     start imsdatadaemon
@@ -327,6 +327,7 @@ service ims_rtp_daemon /system/vendor/bin/ims_rtp_daemon
 
 on property:sys.ims.DATA_DAEMON_STATUS=1
     start ims_rtp_daemon
+    start imsrcsservice
 
 #service ppd /vendor/bin/mm-pp-daemon
 #    class late_start
