@@ -56,7 +56,7 @@ on post-fs-data
     mkdir /tombstones/lpass 0771 system system
     mkdir /tombstones/wcnss 0771 system system
     mkdir /tombstones/dsps 0771 system system
-    mkdir /data/misc/hbtp 0750 system system
+    mkdir /data/vendor/hbtp 0750 system system
     mkdir /persist/qti_fp 0700 system system
 
 # For cpusets initialize for Silver Only first and then Silver + Gold
@@ -132,6 +132,11 @@ service qseecomd /vendor/bin/qseecomd
     class core
     user root
     group root
+
+service spdaemon /vendor/bin/spdaemon
+    class core
+    user system
+    group system
 
 #service mpdecision /system/bin/mpdecision --avg_comp
 #   user root
@@ -322,7 +327,7 @@ service ims_rtp_daemon /system/vendor/bin/ims_rtp_daemon
 on property:sys.ims.DATA_DAEMON_STATUS=1
     start ims_rtp_daemon
 
-#service ppd /system/bin/mm-pp-daemon
+#service ppd /vendor/bin/mm-pp-daemon
 #    class late_start
 #    disabled
 #    user system
@@ -369,7 +374,7 @@ service fps_hal /system/vendor/bin/fingerprint.qcom
     user system
     group system input
 
-service energy-awareness /system/bin/energy-awareness
+service energy-awareness /system/vendor/bin/energy-awareness
     class main
     user system
     group system
