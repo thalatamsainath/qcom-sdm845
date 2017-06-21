@@ -359,15 +359,10 @@ service hbtp /system/vendor/bin/hbtp_daemon
      group system
      disabled
 
-service qfp-daemon /system/vendor/bin/qfp-daemon
+service qfp-daemon /vendor/bin/qfp-daemon
     class late_start
     user system
     group system drmrpc diag input
-
-service fps_hal /system/vendor/bin/fingerprint.qcom
-    class late_start
-    user system
-    group system input
 
 service energy-awareness /system/bin/energy-awareness
     class main
