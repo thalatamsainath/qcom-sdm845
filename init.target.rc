@@ -56,13 +56,14 @@ on post-fs-data
     mkdir /tombstones/lpass 0771 system system
     mkdir /tombstones/wcnss 0771 system system
     mkdir /tombstones/dsps 0771 system system
-    mkdir /data/misc/hbtp 0750 system system
+    mkdir /data/vendor/hbtp 0750 system system
     mkdir /persist/qti_fp 0700 system system
     mkdir /data/misc/seemp 0700 system system
 
 # For cpusets initialize for Silver Only first and then Silver + Gold
 # Silver Only configuration cannot work with 0-7
 on boot
+    chown system system /sys/kernel/hbtp/display_pwr
     start rmt_storage
     start rfs_access
     write /dev/cpuset/top-app/cpus 0-3
@@ -134,6 +135,11 @@ service qseecomd /vendor/bin/qseecomd
     user root
     group root
 
+service spdaemon /vendor/bin/spdaemon
+    class core
+    user system
+    group system
+
 #service mpdecision /system/bin/mpdecision --avg_comp
 #   user root
 #   disabled
@@ -164,7 +170,7 @@ service thermal-engine /system/vendor/bin/thermal-engine
 #   user root
 #   group root
 
-service adsprpcd /system/bin/adsprpcd
+service adsprpcd /vendor/bin/adsprpcd
    class main
    user media
    group media
@@ -305,11 +311,11 @@ service imsdatadaemon /system/vendor/bin/imsdatadaemon
 #   disabled
 
 
-#service imscmservice /system/vendor/bin/imscmservice
-#    class main
-#    user system
-#    group radio diag inet log
-#    disabled
+service imsrcsservice /system/vendor/bin/imsrcsd
+    class main
+    user system
+    group radio diag inet log
+    disabled
 
 on property:sys.ims.QMI_DAEMON_STATUS=1
     start imsdatadaemon
@@ -322,8 +328,9 @@ service ims_rtp_daemon /system/vendor/bin/ims_rtp_daemon
 
 on property:sys.ims.DATA_DAEMON_STATUS=1
     start ims_rtp_daemon
+    start imsrcsservice
 
-#service ppd /system/bin/mm-pp-daemon
+#service ppd /vendor/bin/mm-pp-daemon
 #    class late_start
 #    disabled
 #    user system
@@ -365,7 +372,7 @@ service qfp-daemon /vendor/bin/qfp-daemon
     user system
     group system drmrpc diag input
 
-service energy-awareness /system/bin/energy-awareness
+service energy-awareness /system/vendor/bin/energy-awareness
     class main
     user system
     group system
