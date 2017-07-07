@@ -105,6 +105,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/qcom/sdm845/vintf.xml:$(TARGET_COPY_OUT_VENDOR)/manifest.xml
 
+#ANT+ stack
+PRODUCT_PACKAGES += \
+    AntHalService \
+    libantradio \
+    antradio_app \
+    libvolumelistener
+
 # Display/Graphics
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
@@ -174,3 +181,7 @@ PRODUCT_COPY_FILES += \
 # Kernel modules install path
 KERNEL_MODULES_INSTALL := dlkm
 KERNEL_MODULES_OUT := out/target/product/$(PRODUCT_NAME)/$(KERNEL_MODULES_INSTALL)/lib/modules
+
+#FEATURE_OPENGLES_EXTENSION_PACK support string config file
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.opengles.aep.xml:system/etc/permissions/android.hardware.opengles.aep.xml
