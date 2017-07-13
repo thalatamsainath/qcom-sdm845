@@ -22,7 +22,7 @@ ifeq ($(ENABLE_VENDOR_IMAGE), true)
 #Comment on msm8998 tree says that QTIC does not
 # yet support system/vendor split. So disabling it
 # for sdm845 as well
-TARGET_USES_QTIC := false
+#TARGET_USES_QTIC := false
 
 endif
 TARGET_KERNEL_VERSION := 4.9
@@ -36,6 +36,8 @@ WLAN_CHIPSET := qca_cld3
 
 #Android EGL implementation
 PRODUCT_PACKAGES += libGLES_android
+
+-include $(QCPATH)/common/config/qtic-config.mk
 
 # Video seccomp policy files
 PRODUCT_COPY_FILES += \
@@ -61,6 +63,9 @@ endif
 ifneq ($(strip $(QCPATH)),)
     PRODUCT_BOOT_JARS += WfdCommon
 endif
+
+# Video platform properties file
+PRODUCT_COPY_FILES += hardware/qcom/media/conf_files/sdm845/system_properties.xml:$(TARGET_COPY_OUT_VENDOR)/etc/system_properties.xml
 
 # Video codec configuration files
 ifeq ($(TARGET_ENABLE_QC_AV_ENHANCEMENTS), true)
