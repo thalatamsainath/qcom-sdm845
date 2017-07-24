@@ -95,6 +95,11 @@ on boot
     chown cameraserver cameraserver /dev/cpuset/camera-daemon/tasks
     chmod 0660 /dev/cpuset/camera-daemon/tasks
 
+   ####Regionalization config ####
+    mkdir /persist/speccfg 0770 system system
+    chmod 0660 /persist/speccfg/spec
+    chown system system /persist/speccfg/spec
+
 #Load WLAN driver
     insmod /vendor/lib/modules/qca_cld3_wlan.ko
 
