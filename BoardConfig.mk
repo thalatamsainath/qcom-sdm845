@@ -150,3 +150,6 @@ ADD_RADIO_FILES := true
 
 #Generate DTBO image
 BOARD_KERNEL_SEPARATED_DTBO := true
+
+#To use libhealthd.msm instead of libhealthd.default
+BOARD_HAL_STATIC_LIBRARIES := libhealthd.msm
