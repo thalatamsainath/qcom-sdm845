@@ -199,3 +199,5 @@ PRODUCT_PROPERTY_OVERRIDES += rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 
 #Enable QTI KEYMASTER and GATEKEEPER HIDLs
 KMGK_USE_QTI_SERVICE := true
+
+DEVICE_PACKAGE_OVERLAYS := device/qcom/sdm845/overlay
