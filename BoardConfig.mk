@@ -145,6 +145,9 @@ TARGET_USES_COLOR_METADATA := true
 # Enable sensor multi HAL
 USE_SENSOR_MULTI_HAL := true
 
+#Enable QTI specific Camera2Client layer
+TARGET_USES_QTI_CAMERA2CLIENT := true
+
 #Add non-hlos files to ota packages
 ADD_RADIO_FILES := true
 
