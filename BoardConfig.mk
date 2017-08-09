@@ -27,7 +27,7 @@ BOARD_SECCOMP_POLICY := device/qcom/$(TARGET_BOARD_PLATFORM)/seccomp
 TARGET_NO_BOOTLOADER := false
 TARGET_USES_UEFI := true
 TARGET_NO_KERNEL := false
-BOARD_PRESIL_BUILD := true
+
 -include $(QCPATH)/common/sdm845/BoardConfigVendor.mk
 
 # Some framework code requires this to enable BT
