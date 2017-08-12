@@ -167,4 +167,5 @@ persist.radio.atfwd.start=false
 ro.kernel.qemu.gles=0
 sdm.debug.disable_scalar=0
 qemu.hw.mainkeys=0
+sdm.debug.disable_skip_validate=1
 sdm.debug.disable_inline_rotator=1
