@@ -174,3 +174,6 @@ sdm.debug.prefersplit=1
 
 #Disable backpressure
 debug.sf.disable_backpressure=1
+
+#enable IZat OptInApp overlay
+persist.vendor.overlay.izat.optin=rro
