@@ -381,6 +381,7 @@ service hbtp /system/vendor/bin/hbtp_daemon
      class main
      user system
      group system
+     capabilities SYS_NICE
      disabled
 
 service qfp-daemon /vendor/bin/qfp-daemon
