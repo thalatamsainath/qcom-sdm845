@@ -171,3 +171,7 @@ persist.vendor.overlay.izat.optin=rro
 
 # Property for backup NTP Server
 persist.backup.ntpServer="0.pool.ntp.org"
+
+#IOP properties
+iop.enable_uxe=1
+iop.enable_prefetch_ofr=1
