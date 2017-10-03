@@ -478,7 +478,7 @@
              bitRate="24000000"
              width="1280"
              height="720"
-             frameRate="120" />
+             frameRate="240" />
 
       <!-- audio setting is ignored -->
       <Audio codec="aac"
@@ -492,7 +492,7 @@
              bitRate="12000000"
              width="640"
              height="480"
-             frameRate="120" />
+             frameRate="240" />
 
       <Audio codec="aac"
              bitRate="156000"
