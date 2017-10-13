@@ -167,6 +167,9 @@ ADD_RADIO_FILES := true
 #Generate DTBO image
 BOARD_KERNEL_SEPARATED_DTBO := true
 
+#To use libhealthd.msm instead of libhealthd.default
+BOARD_HAL_STATIC_LIBRARIES := libhealthd.msm
+
 #Enable INTERACTION_BOOST
 TARGET_USES_INTERACTION_BOOST := true
 
