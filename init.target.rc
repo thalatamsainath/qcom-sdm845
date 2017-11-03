@@ -103,6 +103,7 @@ on boot
 
 #Load WLAN driver
     insmod /vendor/lib/modules/qca_cld3_wlan.ko
+    setprop wlan.driver.status "ok"
 
 #start camera server as daemon
 #service qcamerasvr /system/bin/mm-qcamera-daemon
