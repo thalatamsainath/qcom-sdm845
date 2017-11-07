@@ -44,7 +44,7 @@ ifeq ($(ENABLE_VENDOR_IMAGE), true)
 endif
 TARGET_KERNEL_VERSION := 4.9
 
-TARGET_USES_NQ_NFC := true
+TARGET_USES_NQ_NFC := false
 ifeq ($(TARGET_USES_NQ_NFC),true)
 # Flag to enable and support NQ3XX chipsets
 NQ3XX_PRESENT := true
@@ -68,13 +68,8 @@ PRODUCT_COPY_FILES += \
     device/qcom/sdm845/seccomp/mediacodec-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
     device/qcom/sdm845/seccomp/mediaextractor-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy
 
-PRODUCT_BOOT_JARS += tcmiface
 PRODUCT_BOOT_JARS += telephony-ext
 PRODUCT_PACKAGES += telephony-ext
-
-ifeq ($(strip $(BOARD_HAVE_QCOM_FM)),true)
-PRODUCT_BOOT_JARS += qcom.fmradio
-endif #BOARD_HAVE_QCOM_FM
 
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 
@@ -82,10 +77,6 @@ TARGET_DISABLE_DASH := true
 
 ifneq ($(TARGET_DISABLE_DASH), true)
     PRODUCT_BOOT_JARS += qcmediaplayer
-endif
-
-ifneq ($(strip $(QCPATH)),)
-    PRODUCT_BOOT_JARS += WfdCommon
 endif
 
 # Video platform properties file
@@ -266,3 +257,7 @@ PRODUCT_PACKAGES += android.hardware.vr@1.0-impl \
 #Thermal
 PRODUCT_PACKAGES += android.hardware.thermal@1.0-impl \
                     android.hardware.thermal@1.0-service
+
+TARGET_SCVE_DISABLED := true
+TARGET_USES_QTIC := false
+TARGET_USES_QTIC_EXTENSION := false
