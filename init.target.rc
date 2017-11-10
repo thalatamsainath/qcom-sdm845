@@ -101,10 +101,6 @@ on boot
     chmod 0660 /persist/speccfg/spec
     chown system system /persist/speccfg/spec
 
-#Load WLAN driver
-    insmod /vendor/lib/modules/qca_cld3_wlan.ko
-    setprop wlan.driver.status "ok"
-
 #start camera server as daemon
 #service qcamerasvr /system/bin/mm-qcamera-daemon
 #    class late_start
