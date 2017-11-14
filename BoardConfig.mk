@@ -98,7 +98,8 @@ BOARD_VENDOR_KERNEL_MODULES := \
     $(KERNEL_MODULES_OUT)/snd-soc-wcd-mbhc.ko \
     $(KERNEL_MODULES_OUT)/snd-soc-wsa881x.ko \
     $(KERNEL_MODULES_OUT)/snd-soc-sdm845.ko \
-    $(KERNEL_MODULES_OUT)/snd-soc-wcd-spi.ko
+    $(KERNEL_MODULES_OUT)/snd-soc-wcd-spi.ko \
+    $(KERNEL_MODULES_OUT)/llcc_perfmon.ko
 
 TARGET_USES_ION := true
 TARGET_USES_NEW_ION_API :=true
