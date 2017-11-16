@@ -176,7 +176,7 @@ persist.vendor.overlay.izat.optin=rro
 persist.backup.ntpServer="0.pool.ntp.org"
 
 #IOP properties
-iop.enable_uxe=0
+iop.enable_uxe=1
 iop.enable_prefetch_ofr=1
 
 # Property to enable app trigger
