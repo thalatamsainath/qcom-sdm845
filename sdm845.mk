@@ -29,7 +29,7 @@ PRODUCT_MODEL := SDM845 for arm64
 TARGET_USES_AOSP := true
 TARGET_USES_AOSP_FOR_AUDIO := true
 TARGET_USES_QCOM_BSP := false
-BOARD_HAVE_QCOM_FM := true
+BOARD_HAVE_QCOM_FM := false
 
 #Default vendor image configuration
 ifeq ($(ENABLE_VENDOR_IMAGE),)
@@ -112,13 +112,6 @@ PRODUCT_PACKAGES += update_engine \
 
 #Boot control HAL test app
 PRODUCT_PACKAGES_DEBUG += bootctl
-
-#Healthd packages
-PRODUCT_PACKAGES += \
-    android.hardware.health@1.0-impl \
-    android.hardware.health@1.0-convert \
-    android.hardware.health@1.0-service \
-    libhealthd.msm
 
 DEVICE_MANIFEST_FILE := device/qcom/sdm845/manifest.xml
 DEVICE_MATRIX_FILE   := device/qcom/common/compatibility_matrix.xml
