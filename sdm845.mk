@@ -270,6 +270,6 @@ PRODUCT_PACKAGES += android.hardware.camera.provider@2.4-service
 
 TARGET_SCVE_DISABLED := true
 #TARGET_USES_QTIC := false
-TARGET_USES_QTIC_EXTENSION := false
+#TARGET_USES_QTIC_EXTENSION := false
 
 SDM845_DISABLE_MODULE := true
