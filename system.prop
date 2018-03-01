@@ -167,7 +167,6 @@ sdm.debug.disable_inline_rotator=1
 sdm.debug.disable_inline_rotator_secure=1
 
 sdm.debug.prefersplit=1
-sdm.debug.disable_dest_scalar=1
 
 #enable IZat OptInApp overlay
 persist.vendor.overlay.izat.optin=rro
