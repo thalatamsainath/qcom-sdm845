@@ -169,6 +169,13 @@ sdm.debug.disable_inline_rotator_secure=1
 sdm.debug.prefersplit=1
 sdm.debug.disable_dest_scalar=1
 
+# Display Properties as per treble compliance
+vendor.gralloc.disable_ubwc=0
+vendor.display.disable_scaler=0
+vendor.display.disable_inline_rotator=1
+vendor.display.disable_secure_inline_rotator=1
+vendor.display.prefer_source_split=1
+
 #enable IZat OptInApp overlay
 persist.vendor.overlay.izat.optin=rro
 
