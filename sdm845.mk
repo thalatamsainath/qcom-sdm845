@@ -63,7 +63,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_BOOT_JARS += telephony-ext \
                      tcmiface
 PRODUCT_PACKAGES += telephony-ext
-TARGET_ENABLE_QC_AV_ENHANCEMENTS := false
+
+TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 
 TARGET_DISABLE_DASH := true
 
