@@ -258,13 +258,6 @@ PRODUCT_PACKAGES += android.hardware.vr@1.0-impl \
 PRODUCT_PACKAGES += android.hardware.thermal@1.0-impl \
                     android.hardware.thermal@1.0-service
 
-# for HIDL related packages
-PRODUCT_PACKAGES += \
-  android.hardware.audio@2.0-service \
-  android.hardware.audio@2.0-impl \
-  android.hardware.audio.effect@2.0-impl \
-  android.hardware.soundtrigger@2.0-impl
-
 # Camera HIDL configuration file. Shared by passthrough/binderized camera HAL
 PRODUCT_PACKAGES += camera.device@3.2-impl
 PRODUCT_PACKAGES += camera.device@1.0-impl
