@@ -271,3 +271,5 @@ ENABLE_VENDOR_RIL_SERVICE := true
 
 # Enable vndk-sp Libraries
 PRODUCT_PACKAGES += vndk_package
+
+PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE:=true
