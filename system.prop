@@ -61,7 +61,6 @@ ro.netflix.bsp_rev=Q845-05000-1
 # system props for the data modules
 #
 ro.use_data_netmgrd=true
-persist.data.netmgrd.qos.enable=true
 persist.data.mode=concurrent
 
 #system props for time-services
@@ -101,14 +100,6 @@ persist.audio.fluence.voicerec=false
 persist.audio.fluence.speaker=true
 
 #system prop for RmNet Data
-persist.rmnet.data.enable=true
-persist.data.wda.enable=true
-persist.data.df.dl_mode=5
-persist.data.df.ul_mode=5
-persist.data.df.agg.dl_pkt=10
-persist.data.df.agg.dl_size=4096
-persist.data.df.mux_count=8
-persist.data.df.iwlan_mux=9
 persist.data.df.dev_name=rmnet_usb0
 
 #property to enable user to access Google WFD settings
