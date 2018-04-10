@@ -1,4 +1,4 @@
-# Copyright (c) 2013-2017, The Linux Foundation. All rights reserved.
+# Copyright (c) 2013-2018, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -119,6 +119,11 @@ on boot
     chown system system /persist/speccfg/submask
     chown system system /persist/speccfg/partition
 
+#USB controller configuration
+    setprop vendor.usb.rndis.func.name "gsi"
+    setprop vendor.usb.rmnet.func.name "gsi"
+    setprop sys.usb.configfs 1
+
 #start camera server as daemon
 #service qcamerasvr /system/bin/mm-qcamera-daemon
 #    class late_start
@@ -152,6 +157,7 @@ on property:sys.shutdown.requested=*
 on charger
     start hvdcp_opti
     start power_off_alarm
+    setprop sys.usb.configfs 1
 
 ## import cne init file
 #on post-fs
