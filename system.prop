@@ -148,8 +148,8 @@ persist.vendor.overlay.izat.optin=rro
 persist.backup.ntpServer="0.pool.ntp.org"
 
 #IOP properties
-iop.enable_uxe=1
-iop.enable_prefetch_ofr=1
+vendor.iop.enable_uxe=1
+vendor.iop.enable_prefetch_ofr=1
 
 # Property to enable app trigger
 ro.vendor.at_library=libqti-at.so
