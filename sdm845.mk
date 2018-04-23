@@ -268,3 +268,6 @@ TARGET_SCVE_DISABLED := true
 SDM845_DISABLE_MODULE := true
 
 ENABLE_VENDOR_RIL_SERVICE := true
+
+# Enable vndk-sp Libraries
+PRODUCT_PACKAGES += vndk_package
