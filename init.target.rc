@@ -150,7 +150,7 @@ on property:sys.shutdown.requested=*
     stop vendor.per_proxy
 
 on charger
-    start hvdcp_opti
+    start vendor.hvdcp_opti
     start power_off_alarm
 
 ## import cne init file
@@ -427,7 +427,7 @@ service seempd /system/bin/seempd
     group system sdcard_rw
     socket seempdw dgram 0666 system system
 
-service hvdcp_opti /system/vendor/bin/hvdcp_opti
+service vendor.hvdcp_opti /system/vendor/bin/hvdcp_opti
     class main
     user root
     group system wakelock
