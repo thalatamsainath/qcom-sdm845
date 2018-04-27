@@ -19,7 +19,11 @@ endif
 # Compile Linux Kernel
 #----------------------------------------------------------------------
 ifeq ($(KERNEL_DEFCONFIG),)
-    KERNEL_DEFCONFIG := sdm845_defconfig
+   ifeq ($(TARGET_BUILD_VARIANT),user)
+     KERNEL_DEFCONFIG := sdm845-perf_defconfig
+   else
+     KERNEL_DEFCONFIG := sdm845_defconfig
+   endif
 endif
 
 ifeq ($(TARGET_KERNEL_SOURCE),)
