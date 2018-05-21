@@ -49,9 +49,11 @@ on fs
     wait /dev/block/platform/soc/1d84000.ufshc
     symlink /dev/block/platform/soc/1d84000.ufshc /dev/block/bootdevice
     mount_all /vendor/etc/fstab.qcom
+    chown root system /mnt/vendor/persist
+    chmod 0771 /mnt/vendor/persist
     swapon_all /vendor/etc/fstab.qcom
-    restorecon_recursive /persist
-    mkdir /persist/data 0700 system system
+    restorecon_recursive /mnt/vendor/persist
+    mkdir /mnt/vendor/persist/data 0700 system system
 
 on post-fs
     start vendor.qseecomd
@@ -70,7 +72,6 @@ on post-fs-data
     mkdir /tombstones/wcnss 0771 system system
     mkdir /tombstones/dsps 0771 system system
     mkdir /data/vendor/hbtp 0750 system system
-    mkdir /persist/qti_fp 0700 system system
     mkdir /data/misc/seemp 0700 system system
     mkdir /data/vendor/tloc 0700 system drmrpc
 
@@ -415,11 +416,6 @@ service hbtp /system/vendor/bin/hbtp_daemon
      group system
      capabilities SYS_NICE
      disabled
-
-service qfp-daemon /vendor/bin/qfp-daemon
-    class late_start
-    user system
-    group system drmrpc diag input
 
 service energy-awareness /system/vendor/bin/energy-awareness
     class main
