@@ -240,7 +240,9 @@ KMGK_USE_QTI_SERVICE := true
 #Enable KEYMASTER 4.0
 ENABLE_KM_4_0 := true
 
+ifneq ($(strip $(TARGET_USES_QSSI)),true)
 DEVICE_PACKAGE_OVERLAYS += device/qcom/sdm845/overlay
+endif
 
 #VR
 PRODUCT_PACKAGES += android.hardware.vr@1.0-impl \
