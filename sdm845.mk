@@ -83,9 +83,6 @@ PRODUCT_COPY_FILES += hardware/qcom/media/conf_files/sdm845/system_properties.xm
 ifeq ($(TARGET_ENABLE_QC_AV_ENHANCEMENTS), true)
 PRODUCT_COPY_FILES += device/qcom/sdm845/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_vendor.xml
 
-PRODUCT_PROPERTY_OVERRIDES  += \
-    media.settings.xml=/vendor/etc/media_profiles_vendor.xml
-
 PRODUCT_COPY_FILES += device/qcom/sdm845/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml
 PRODUCT_COPY_FILES += device/qcom/sdm845/media_codecs_vendor_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_vendor_audio.xml
 
@@ -165,8 +162,7 @@ endif
 
 # WLAN driver configuration file
 PRODUCT_COPY_FILES += \
-    device/qcom/sdm845/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini \
-    device/qcom/sdm845/wifi_concurrency_cfg.txt:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wifi_concurrency_cfg.txt
+    device/qcom/sdm845/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
 
 # MIDI feature
 PRODUCT_COPY_FILES += \
@@ -272,3 +268,6 @@ ENABLE_VENDOR_RIL_SERVICE := true
 PRODUCT_PACKAGES += vndk_package
 
 PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE:=true
+
+#Enable WIFI AWARE FEATURE
+WIFI_HIDL_FEATURE_AWARE := true
