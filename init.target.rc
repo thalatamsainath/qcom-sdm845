@@ -131,6 +131,9 @@ on boot
     setprop vendor.usb.dpl.inst.name "dpl"
     setprop sys.usb.configfs 1
 
+#Load WLAN driver
+    insmod /vendor/lib/modules/qca_cld3_wlan.ko
+
 #start camera server as daemon
 #service qcamerasvr /system/bin/mm-qcamera-daemon
 #    class late_start
@@ -366,7 +369,7 @@ service vendor.imsdatadaemon /system/vendor/bin/imsdatadaemon
 service vendor.imsrcsservice /system/vendor/bin/imsrcsd
     class main
     user system
-    group radio diag inet log
+    group radio diag inet log wakelock
     disabled
 
 on property:vendor.ims.QMI_DAEMON_STATUS=1

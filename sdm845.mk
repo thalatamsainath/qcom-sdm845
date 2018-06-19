@@ -113,6 +113,8 @@ endif
 DEVICE_MANIFEST_FILE := device/qcom/sdm845/manifest.xml
 DEVICE_MATRIX_FILE   := device/qcom/common/compatibility_matrix.xml
 DEVICE_FRAMEWORK_MANIFEST_FILE := device/qcom/sdm845/framework_manifest.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := device/qcom/common/vendor_framework_compatibility_matrix.xml
+
 
 #ANT+ stack
 PRODUCT_PACKAGES += \
@@ -234,13 +236,18 @@ PRODUCT_VENDOR_MOVE_ENABLED := true
 
 PRODUCT_PROPERTY_OVERRIDES += rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 
+#Property to set BG App limit
+PRODUCT_PROPERTY_OVERRIDES += ro.vendor.qti.sys.fw.bg_apps_limit=60
+
 #Enable QTI KEYMASTER and GATEKEEPER HIDLs
 KMGK_USE_QTI_SERVICE := true
 
 #Enable KEYMASTER 4.0
 ENABLE_KM_4_0 := true
 
+ifneq ($(strip $(TARGET_USES_QSSI)),true)
 DEVICE_PACKAGE_OVERLAYS += device/qcom/sdm845/overlay
+endif
 
 #VR
 PRODUCT_PACKAGES += android.hardware.vr@1.0-impl \
