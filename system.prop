@@ -72,7 +72,6 @@ telephony.lteOnCdmaDevice=1
 persist.fuse_sdcard=true
 
 #system prop for Bluetooth SOC type
-qcom.bluetooth.soc=cherokee
 ro.bluetooth.library_name=libbluetooth_qti.so
 vendor.bluetooth.soc=cherokee
 persist.vendor.btstack.enable.splita2dp=true
