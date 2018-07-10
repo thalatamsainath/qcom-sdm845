@@ -92,6 +92,15 @@ persist.audio.fluence.voicecall=true
 persist.audio.fluence.voicerec=false
 persist.audio.fluence.speaker=true
 
+#enable offload audio video playback by default
+audio.offload.video=true
+
+#enable music through deep buffer
+audio.deep_buffer.media=true
+
+#set AudioFlinger client heap size
+ro.af.client_heap_size_kbyte=7168
+
 #system prop for RmNet Data
 persist.data.df.dev_name=rmnet_usb0
 
@@ -99,6 +108,9 @@ persist.data.df.dev_name=rmnet_usb0
 persist.debug.wfd.enable=1
 ##property to choose between virtual/external wfd display
 persist.sys.wfd.virtual=0
+
+#property to enable HWC for VDS
+debug.sf.enable_hwc_vds=1
 
 # enable tunnel encoding for amrwb
 tunnel.audio.encode = true
