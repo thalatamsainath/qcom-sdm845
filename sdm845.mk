@@ -82,6 +82,8 @@ ifneq ($(strip $(QCPATH)),)
     PRODUCT_BOOT_JARS += WfdCommon
 endif
 
+PRODUCT_BOOT_JARS += vendor.qti.voiceprint-V1.0-java
+
 # Video platform properties file
 PRODUCT_COPY_FILES += hardware/qcom/media/conf_files/sdm845/system_properties.xml:$(TARGET_COPY_OUT_VENDOR)/etc/system_properties.xml
 
