@@ -166,6 +166,7 @@ persist.backup.ntpServer="0.pool.ntp.org"
 #IOP properties
 vendor.iop.enable_uxe=1
 vendor.iop.enable_prefetch_ofr=1
+vendor.perf.iop_v3.enable=1
 
 # Property to enable app trigger
 ro.vendor.at_library=libqti-at.so
