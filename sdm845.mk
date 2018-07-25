@@ -36,6 +36,9 @@ TARGET_USES_AOSP := false
 TARGET_USES_AOSP_FOR_AUDIO := false
 TARGET_USES_QCOM_BSP := false
 
+# RRO configuration
+TARGET_USES_RRO := true
+
 # Default A/B configuration.
 ENABLE_AB ?= true
 
@@ -253,7 +256,7 @@ KMGK_USE_QTI_SERVICE := true
 #Enable KEYMASTER 4.0
 ENABLE_KM_4_0 := true
 
-ifneq ($(strip $(TARGET_USES_QSSI)),true)
+ifneq ($(strip $(TARGET_USES_RRO)),true)
 DEVICE_PACKAGE_OVERLAYS += device/qcom/sdm845/overlay
 endif
 
