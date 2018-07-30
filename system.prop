@@ -178,7 +178,3 @@ ro.vendor.qti.core_ctl_max_cpu=4
 
 #Expose aux camera for below packages
 vendor.camera.aux.packagelist=org.codeaurora.snapcam
-
-#Property to enable touch optimizations
-persist.vendor.qti.inputopts.enable=true
-persist.vendor.qti.inputopts.movetouchslop=0.6
