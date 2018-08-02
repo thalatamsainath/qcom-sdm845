@@ -105,4 +105,4 @@ fi
 chown system /dev/usf1
 
 # Set enabled properties for daemon
-setprop ro.qc.sdk.us.digitalpen 1
+setprop ro.vendor.qc.sdk.us.digitalpen 1
