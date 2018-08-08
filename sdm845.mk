@@ -171,9 +171,10 @@ ifneq ($(WLAN_CHIPSET),)
 PRODUCT_PACKAGES += $(WLAN_CHIPSET)_wlan.ko
 endif
 
-# WLAN driver configuration file
+# WLAN configuration file
 PRODUCT_COPY_FILES += \
-    device/qcom/sdm845/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
+    device/qcom/sdm845/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini \
+    frameworks/native/data/etc/android.hardware.wifi.aware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.aware.xml
 
 # MIDI feature
 PRODUCT_COPY_FILES += \
