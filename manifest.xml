@@ -835,6 +835,8 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <instance>panoStitching</instance>
         </interface>
     </hal>
+<!--
+    SCVE ObjectTracker hal services
     <hal format="hidl">
         <name>vendor.qti.hardware.scve.objecttracker</name>
         <transport>hwbinder</transport>
@@ -844,4 +846,5 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <instance>objectTracker</instance>
         </interface>
     </hal>
+-->
 </manifest>
