@@ -18,6 +18,11 @@ PRODUCT_PROPERTY_OVERRIDES  += \
   dalvik.vm.heapmaxfree=8m
 
 
+# Property to enable app trigger
+PRODUCT_PROPERTY_OVERRIDES  += \
+  ro.vendor.at_library=libqti-at.so\
+  persist.vendor.qti.games.gt.prof=1
+
 # system prop for opengles version
 #
 # 196608 is decimal for 0x30000 to report version 3
