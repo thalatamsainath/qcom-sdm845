@@ -167,10 +167,6 @@ persist.backup.ntpServer="0.pool.ntp.org"
 vendor.iop.enable_uxe=1
 vendor.perf.iop_v3.enable=1
 
-# Property to enable app trigger
-ro.vendor.at_library=libqti-at.so
-persist.vendor.qti.games.gt.prof=1
-
 #min/max cpu in core control
 ro.vendor.qti.core_ctl_min_cpu=2
 ro.vendor.qti.core_ctl_max_cpu=4

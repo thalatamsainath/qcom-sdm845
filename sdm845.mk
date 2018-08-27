@@ -18,6 +18,11 @@ PRODUCT_PROPERTY_OVERRIDES  += \
   dalvik.vm.heapmaxfree=8m
 
 
+# Property to enable app trigger
+PRODUCT_PROPERTY_OVERRIDES  += \
+  ro.vendor.at_library=libqti-at.so\
+  persist.vendor.qti.games.gt.prof=1
+
 # system prop for opengles version
 #
 # 196608 is decimal for 0x30000 to report version 3
@@ -35,6 +40,9 @@ PRODUCT_MODEL := SDM845 for arm64
 TARGET_USES_AOSP := false
 TARGET_USES_AOSP_FOR_AUDIO := false
 TARGET_USES_QCOM_BSP := false
+
+# RRO configuration
+TARGET_USES_RRO := true
 
 # Default A/B configuration.
 ENABLE_AB ?= true
@@ -175,7 +183,8 @@ endif
 # WLAN configuration file
 PRODUCT_COPY_FILES += \
     device/qcom/sdm845/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini \
-    frameworks/native/data/etc/android.hardware.wifi.aware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.aware.xml
+    frameworks/native/data/etc/android.hardware.wifi.aware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.aware.xml \
+    frameworks/native/data/etc/android.hardware.wifi.rtt.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.rtt.xml
 
 # MIDI feature
 PRODUCT_COPY_FILES += \
@@ -255,7 +264,7 @@ KMGK_USE_QTI_SERVICE := true
 #Enable KEYMASTER 4.0
 ENABLE_KM_4_0 := true
 
-ifneq ($(strip $(TARGET_USES_QSSI)),true)
+ifneq ($(strip $(TARGET_USES_RRO)),true)
 DEVICE_PACKAGE_OVERLAYS += device/qcom/sdm845/overlay
 endif
 
