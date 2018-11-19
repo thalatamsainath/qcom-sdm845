@@ -310,11 +310,3 @@ TARGET_USES_MKE2FS := true
 $(call inherit-product, build/make/target/product/product_launched_with_p.mk)
 
 TARGET_MOUNT_POINTS_SYMLINKS := false
-
-# propery "ro.vendor.build.security_patch" is checked for
-# CTS compliance so need to make sure its set with following
-# format "YYYY-MM-DD" on production devices.
-#
-ifeq ($(ENABLE_VENDOR_IMAGE), true)
- VENDOR_SECURITY_PATCH := 2018-06-05
-endif
